@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { SelectionListDemoComponent } from './selectionlistdemo/selectionlistdemo.component';
 import {SelectionListModule} from 'selection-list';
 import { LibdemoComponent } from './libdemo.component';
-import {RouterModule} from '@angular/router';
 import {LibdemoRoutingModule} from './libdemo-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemPlanetService} from './data/InMemPlanetSevice';
 
 @NgModule({
   declarations: [SelectionListDemoComponent, LibdemoComponent],
@@ -14,7 +16,9 @@ import {LibdemoRoutingModule} from './libdemo-routing.module';
   imports: [
     CommonModule,
     LibdemoRoutingModule,
-    SelectionListModule
+    SelectionListModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forFeature(InMemPlanetService)
   ]
 })
 export class LibdemoModule { }
