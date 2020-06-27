@@ -5,7 +5,7 @@ import {solSystem} from './solarsystems.data';
 export class InMemPlanetService implements InMemoryDbService {
 
   createDb(){
-    const planet: IPlanet[] = [
+    const planets: IPlanet[] = [
       { id: 0, name: 'Mercury', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet,
       { id: 1, name: 'Venus', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet,
       { id: 2, name: 'Earth', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet,
@@ -15,7 +15,7 @@ export class InMemPlanetService implements InMemoryDbService {
       { id: 6, name: 'Neptune', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet,
       { id: 7, name: 'Uranus', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet
       ];
-    return { planet };
+    return { planets };
   }
 
 }
