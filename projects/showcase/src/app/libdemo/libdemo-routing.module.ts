@@ -1,12 +1,16 @@
-import {ErrorHandler, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {SelectionListDemoComponent} from './selectionlistdemo/selectionlistdemo.component';
-import {AlertService} from '../shared/error/alert.service';
+import {PlanetsResolver} from './planets-resolver.service';
 
 const routes: Routes = [
   { path: 'libdemo',
     children: [
-      { path: 'selectionlist', component: SelectionListDemoComponent}
+      { path: 'selectionlist',
+        component: SelectionListDemoComponent,
+      resolve: {
+        planets: PlanetsResolver
+      }}
     ]
   }];
 

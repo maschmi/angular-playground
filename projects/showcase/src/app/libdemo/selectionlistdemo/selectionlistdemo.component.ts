@@ -1,9 +1,9 @@
-import {Component, OnInit, SkipSelf} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PlanetsService} from '../services/planets.service';
-import {catchError, tap} from 'rxjs/operators';
-import {Observable, of, throwError} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 import {IPlanet} from '../models/planet.model';
-import {AlertService} from '../../shared/error/alert.service';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -13,13 +13,10 @@ import {AlertService} from '../../shared/error/alert.service';
 export class SelectionListDemoComponent implements OnInit {
   public allPlanets: Observable<IPlanet[]>;
 
-
-  constructor(private planetService: PlanetsService) { }
+  constructor(private planetService: PlanetsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.allPlanets = this.planetService.getAll();
+    this.allPlanets = this.route.data.pipe(map(d => d.planets));
   }
-
-
 
 }
