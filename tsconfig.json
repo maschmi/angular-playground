@@ -15,6 +15,12 @@
     },
     {
       "path": "./projects/showcase/e2e/tsconfig.json"
+    },
+    {
+      "path": "./projects/selection-list/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/selection-list/tsconfig.spec.json"
     }
 ]
 }
