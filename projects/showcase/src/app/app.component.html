@@ -1,8 +1,9 @@
 <mat-toolbar>
   <button mat-button routerLink="/">Home</button>
-    <buton mat-menu-item [matMenuTriggerFor]="libsMenu">Libraries<mat-icon>keyboard_arrow_down</mat-icon></buton>
+    <button mat-menu-item [matMenuTriggerFor]="libsMenu">Libraries<mat-icon>keyboard_arrow_down</mat-icon></button>
   <mat-menu #libsMenu="matMenu">
-    <buton mat-menu-item routerLink="/libdemo/selectionlist">Selection List</buton>
+    <button mat-menu-item routerLink="/libdemo/selectionlist">Selection List</button>
   </mat-menu>
 </mat-toolbar>
+<app-error></app-error>
 <router-outlet></router-outlet>

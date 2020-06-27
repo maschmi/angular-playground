@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, SkipSelf} from '@angular/core';
 import {PlanetsService} from '../services/planets.service';
 import {catchError, tap} from 'rxjs/operators';
 import {Observable, of} from 'rxjs';
 import {IPlanet} from '../models/planet.model';
+import {ErrorService} from '../../shared/error/error.service';
+
 
 @Component({
   templateUrl: './selectionlistdemo.component.html',
@@ -20,16 +22,16 @@ export class SelectionListDemoComponent implements OnInit {
     return this.error ?? '';
   }
 
-  constructor(private planetService: PlanetsService) { }
+  constructor(private planetService: PlanetsService, @SkipSelf() private errorService: ErrorService) { }
 
   ngOnInit(): void {
     this.allPlanets = this.planetService.getAll()
       .pipe(
-        tap(() => this.error = undefined),
+        tap(() =>  this.errorService.clearErrors()),
         catchError(err => {
-          this.error = err;
+          this.errorService.addError(err);
           return of([]);
-        }),
+        })
       );
   }
 
