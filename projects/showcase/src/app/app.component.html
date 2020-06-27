@@ -2,7 +2,7 @@
   <span>Showcase</span>
     <buton mat-menu-item [matMenuTriggerFor]="libsMenu">Libraries<mat-icon>keyboard_arrow_down</mat-icon></buton>
   <mat-menu #libsMenu="matMenu">
-    <buton mat-menu-item>Selection List</buton>
+    <buton mat-menu-item routerLink="/libdemo/selectionlist">Selection List</buton>
   </mat-menu>
 </mat-toolbar>
-<app-selectionlistdemo></app-selectionlistdemo>
+<router-outlet></router-outlet>
