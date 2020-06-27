@@ -1,4 +1,4 @@
-<div class="alert" *ngFor="let message of errorMessages | async; let i = index">
+<div class="alert" *ngFor="let message of errors| async; let i = index">
   <span class="alert-message">{{message}}</span>
   <button class="alert-button dismiss" mat-icon-button (click)="dismiss(i)"><mat-icon>alarm_off</mat-icon></button>
 </div>
