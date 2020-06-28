@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import {AlertService} from '../../../../app/shared/error/alert.service';
 
-import { PlanetsService } from './planets.service';
 
-describe('PlanetsService', () => {
-  let service: PlanetsService;
+describe('AlertService', () => {
+  let service: AlertService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PlanetsService);
+    service = TestBed.inject(AlertService);
   });
 
   it('should be created', () => {
