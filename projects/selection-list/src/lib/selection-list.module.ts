@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
-import { SelectionListComponent } from './selection-list.component';
+import {DefaultConfig, SelectionListComponent} from './selection-list.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {SelectionListConfig} from '../public-api';
 
 
 
 @NgModule({
   declarations: [SelectionListComponent],
-  imports: [
+  imports: [BrowserModule
   ],
   exports: [SelectionListComponent]
 })
