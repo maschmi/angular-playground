@@ -88,6 +88,7 @@
             "polyfills": "projects/showcase/src/polyfills.ts",
             "tsConfig": "projects/showcase/tsconfig.spec.json",
             "karmaConfig": "projects/showcase/karma.conf.js",
+            "codeCoverage": true,
             "assets": [
               "projects/showcase/src/favicon.ico",
               "projects/showcase/src/assets"
@@ -123,6 +124,10 @@
               "devServerTarget": "showcase:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     },
