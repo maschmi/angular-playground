@@ -1,8 +1,18 @@
-import {Component, Inject, Input, OnInit, Optional, SkipSelf} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnInit, Optional, Output, SkipSelf} from '@angular/core';
 import {SelectionListConfig} from './config/selection-list.config';
 
 export class DefaultConfig implements SelectionListConfig {
-  title(v): string {
+  hoverColor = 'grey';
+  selectionColor = 'blue';
+
+  selectedPredicate = (element: any, currentSelection: any) => {
+    if (element.id && currentSelection.id) {
+      return element.id === currentSelection.id;
+    }
+    return false;
+  }
+
+  innerHtml(v): string {
     if (v.name) {
       return v.name;
     }
@@ -17,16 +27,19 @@ export class DefaultConfig implements SelectionListConfig {
 @Component({
   selector: 'inw-selection-list',
   templateUrl: './selection-list.component.html',
-  styles: [
-  ]
+  styleUrls: ['./selection-list-component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectionListComponent implements OnInit {
 
   @Input() listData: any[];
+  @Input() selectedElement: any;
+  @Output() selectionChanged = new EventEmitter<any>();
+
   private config: DefaultConfig;
 
-  public calculateTitle(element: any) {
-    return this.config.title(element);
+  public getInnerHtml(element: any) {
+    return this.config.innerHtml(element);
   }
 
   constructor(@Inject('SelectionListConfig') @SkipSelf() @Optional() private selectionListConfig: SelectionListConfig) {
@@ -40,4 +53,11 @@ export class SelectionListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSelect(element: any) {
+    this.selectionChanged.emit(element);
+  }
+
+  isSelected(element: any): boolean {
+    return this.config.selectedPredicate(element, this.selectedElement);
+  }
 }

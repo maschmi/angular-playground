@@ -3,4 +3,8 @@
       {{planet.name}}
   </li>
 </ul>
-<inw-selection-list [listData]="allPlanets | async"></inw-selection-list>
+<inw-selection-list
+  [listData]="allPlanets | async"
+  [selectedElement]="selectedElement"
+  (selectionChanged)="onSelectionChanged($event)"></inw-selection-list>
+
