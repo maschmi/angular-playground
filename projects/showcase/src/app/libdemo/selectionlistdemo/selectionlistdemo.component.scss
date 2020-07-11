@@ -1,0 +1,21 @@
+.app-content-grid-selection-detail {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: grid;
+  grid-template-columns: 10rem auto;
+  column-gap: 0.5rem;
+  overflow-y: auto;
+}
+
+.app-selection-list {
+  max-width: 10rem;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.app-selection-details {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+

@@ -1,0 +1,22 @@
+<div class="app-details-display">
+  <mat-form-field class="details-display-row">
+    <mat-label>Planet name</mat-label>
+    <input size="255" matInput type="text" [formControl]="planetNameControl">
+  </mat-form-field>
+  <mat-form-field class="details-display-row">
+    <mat-label>Year of discovery</mat-label>
+    <input size="4" matInput type="number" [formControl]="planetYearControl">
+  </mat-form-field>
+  <mat-form-field class="details-display-row">
+    <mat-label>Solar System</mat-label>
+    <input size="255" matInput type="text" [formControl]="systemNameControl">
+  </mat-form-field>
+  <mat-form-field class="details-display-row">
+    <mat-label>Solar System Distance</mat-label>
+    <input size="10" matInput type="text" [formControl]="systemDistanceControl">
+  </mat-form-field>
+  <mat-form-field class="details-display-row">
+    <mat-label>Habitable</mat-label>
+    <input size="10" matInput type="text" [formControl]="planetHabitableControl">
+  </mat-form-field>
+</div>

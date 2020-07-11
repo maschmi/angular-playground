@@ -1,10 +1,11 @@
-<ul>
-  <li *ngFor="let planet of allPlanets | async">
-      {{planet.name}}
-  </li>
-</ul>
-<inw-selection-list
-  [listData]="allPlanets | async"
-  [selectedElement]="selectedElement"
-  (selectionChanged)="onSelectionChanged($event)"></inw-selection-list>
-
+<div class="app-content-grid-selection-detail">
+  <div class="app-selection-list">
+  <inw-selection-list
+    [listData]="allPlanets | async"
+    [selectedElement]="selectedElement"
+    (selectionChanged)="onSelectionChanged($event)"></inw-selection-list>
+  </div>
+  <div class="app-selection-details">
+    <app-planet-details [planet]="selectedElement"></app-planet-details>
+  </div>
+</div>

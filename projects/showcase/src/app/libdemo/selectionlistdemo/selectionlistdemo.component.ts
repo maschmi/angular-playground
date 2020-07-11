@@ -22,6 +22,9 @@ export class PlanetSelectionConfig implements SelectionListConfig {
 
 @Component({
   templateUrl: './selectionlistdemo.component.html',
+  styles: ['[override] inw-selection-list li.active {\n' +
+    '  background-color: green;\n' +
+    '}'],
   styleUrls: ['./selectionlistdemo.component.scss'],
   providers: [{provide: 'SelectionListConfig', useClass: PlanetSelectionConfig }]
 })
