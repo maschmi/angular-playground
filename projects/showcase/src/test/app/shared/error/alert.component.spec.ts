@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {AlertComponent} from '../../../../app/shared/error/alert.component';
+import {AlertService} from '../../../../app/shared/error/alert.service';
+import {AppMaterialModule} from '../../../../app/app-material.module';
 
 
 describe('AlertComponent', () => {
@@ -8,7 +10,9 @@ describe('AlertComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlertComponent ]
+      imports: [AppMaterialModule],
+      declarations: [ AlertComponent ],
+      providers: [{provide: AlertService, useClass: AlertService}]
     })
     .compileComponents();
   }));
