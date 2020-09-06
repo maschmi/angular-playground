@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlanetDetailsComponent } from './planet-details.component';
+import {AppMaterialModule} from '../../app-material.module';
+import {ReactiveFormsModule} from '@angular/forms';
+import {ConvertYesNoPipe} from '../shared/convert-yes-no.pipe';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('PlanetDetailsComponent', () => {
   let component: PlanetDetailsComponent;
@@ -8,7 +12,9 @@ describe('PlanetDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlanetDetailsComponent ]
+      declarations: [ PlanetDetailsComponent ],
+      imports: [AppMaterialModule, ReactiveFormsModule, NoopAnimationsModule],
+      providers: [ {provide: ConvertYesNoPipe, useClass: ConvertYesNoPipe}]
     })
     .compileComponents();
   }));
