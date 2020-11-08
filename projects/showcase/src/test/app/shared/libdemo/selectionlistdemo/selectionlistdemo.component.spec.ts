@@ -3,9 +3,7 @@ import {ActivatedRoute, Data} from '@angular/router';
 import {SelectionListDemoComponent} from '../../../../../app/libdemo/selectionlistdemo/selectionlistdemo.component';
 import {ActivatedRouteStub} from '../../../../helper/activated-route.stub';
 import {MockSelectionListComponent} from '../../../../helper/mock-components/mock-selection-list.component';
-
-
-
+import {SelectionListModule} from 'selection-list';
 
 describe('SelectionlistdemoComponent', () => {
   let component: SelectionListDemoComponent;
@@ -16,7 +14,8 @@ describe('SelectionlistdemoComponent', () => {
       providers: [{
         provide: ActivatedRoute, useValue: mockActivatedRoute
       }],
-      declarations: [ SelectionListDemoComponent, MockSelectionListComponent]
+      declarations: [ SelectionListDemoComponent, MockSelectionListComponent],
+      imports: [SelectionListModule]
     })
     .compileComponents();
   }));
