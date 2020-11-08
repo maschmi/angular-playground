@@ -8,7 +8,7 @@ export class InMemPlanetService implements InMemoryDbService {
     const planets: IPlanet[] = [
       { id: 0, name: 'Mercury', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet,
       { id: 1, name: 'Venus', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet,
-      { id: 2, name: 'Earth', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet,
+      { id: 2, name: 'Earth', discoveryYear: undefined, habitable: true, system: solSystem } as IPlanet,
       { id: 3, name: 'Mars', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet,
       { id: 4, name: 'Jupiter', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet,
       { id: 5, name: 'Saturn', discoveryYear: undefined, habitable: false, system: solSystem } as IPlanet,

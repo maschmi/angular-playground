@@ -1,0 +1,12 @@
+.inw-selection-list-element {
+  list-style: none;
+}
+
+li:hover {
+  background-color: lightgrey;
+}
+
+li.active {
+  background-color: blue;
+  color: white;
+}

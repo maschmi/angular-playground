@@ -1,0 +1,9 @@
+<ul>
+  <li
+    *ngFor="let element of listData"
+    class="inw-selection-list-element"
+    [innerHTML]="getInnerHtml(element)"
+    [ngClass]="{'active': isSelected(element)}"
+    (click)="onSelect(element)">
+  </li>
+</ul>

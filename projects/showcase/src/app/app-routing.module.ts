@@ -4,7 +4,8 @@ import {LibdemoComponent} from './libdemo/libdemo.component';
 
 
 const routes: Routes = [
-  {path: 'libdemo', component: LibdemoComponent}
+  {path: 'libdemo',
+    loadChildren: () => import('./libdemo/libdemo.module').then(m => m.LibdemoModule)}
 ];
 
 @NgModule({
