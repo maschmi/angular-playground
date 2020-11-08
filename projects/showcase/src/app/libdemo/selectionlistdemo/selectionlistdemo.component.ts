@@ -6,8 +6,7 @@ import {ActivatedRoute} from '@angular/router';
 import {SelectionListConfig} from 'selection-list';
 
 export class PlanetSelectionConfig implements SelectionListConfig {
-  hoverColor = 'grey';
-  selectionColor: 'blue';
+
   innerHtml = (v: IPlanet) => {
     return v.name + '<br>' + v.system.name;
   }

@@ -2,8 +2,6 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnInit,
 import {SelectionListConfig} from './config/selection-list.config';
 
 export class DefaultConfig implements SelectionListConfig {
-  hoverColor = 'grey';
-  selectionColor = 'blue';
 
   selectedPredicate = (element: any, currentSelection: any) => {
     if (element.id && currentSelection.id) {
