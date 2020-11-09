@@ -36,7 +36,7 @@ jobs:
     #- name: E2E
     #  run: npm run e2e-ci
     - name: Deploy
-      run: npm run ng -- deploy --base-href="angular-playground" --no-silent --name="Maschmi" --email="martin@martin-s-schmidt.de"
+      run: npm run ng -- deploy --base-href="" --deploy-url="angular-playground" --no-silent --name="Maschmi" --email="martin@martin-s-schmidt.de"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
